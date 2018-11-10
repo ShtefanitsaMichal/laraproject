@@ -20,11 +20,25 @@ Route::get('main_apps', function () {   $main_apps = DB::table('main_apps')->get
 
 Route::get('main_apps/{id}', function ($id) {
     $main_apps = DB::table('main_apps')->get(); return view('main_apps', ['main_apps' => $main_apps]);
-//
-})->where('id', '[0-9]+');
+//Example 3-6. Optional Route Parameter
+})->where('id', '[0-9]');
+
+Route::get('main_apps/{session_id}', function ($session_id) {
+$main_apps = DB::table('main_apps')->get(); return view('main_apps', ['main_apps' => $main_apps]);
+})->where('session_id', '[0-9A-Za-z]+');
 
 //Example 3-9. Defining route names
-Route::get('main_apps/{id}', [
-'as' => 'members.show',
-'uses' => 'MembersController@show'
+// app/Http/routes.php
+    Route::get('main_apps/{id}', [
+    'as' => 'members.show',
+    'uses' => 'MembersController@show'
+]);
+
+//Example 3-10. Defining Closure routes with a configuration array
+
+Route::get('/main_apps/{id}/edit', [
+'as' => 'main_apps.edit',
+function ($id) {
+
+}
 ]);
