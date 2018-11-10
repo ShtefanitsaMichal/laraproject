@@ -10,10 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
     
 Route::get('employee', function () {   $employee = DB::table('employee')->get(); return view('employee', ['employee' => $employee]); });
 Route::get('main_apps', function () {   $main_apps = DB::table('main_apps')->get(); return view('main_apps', ['main_apps' => $main_apps]); });
@@ -46,3 +42,9 @@ Route::group([], function(){
         return 'world';
     });
 });
+//Example 3-24. Route for the simplest controller
+Route::get('/', 'MySampleController@home');
+
+//Example 3-26. Binding basic form actions
+Route::get('tasks/create', 'TasksController@create');
+Route::post('tasks', 'TasksController@store');
