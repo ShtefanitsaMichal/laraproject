@@ -82,9 +82,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
+                    <a href="<?php echo route('main_apps.show', ['id' => 14]); ?>">
                     Podstawowe aplikacji
+                    </a>
                 </div>
-
                 <div class="links">
                 <table> 
                     <tr>
