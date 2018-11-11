@@ -79,11 +79,18 @@
                     @endauth
                 </div>
             @endif
+            <ul>  
+                <li><a href="employee">Employee</a></li>
+                <li><a href="layout">Layout</a></li>
+                <li><a href="main_apps">Main_apps</a></li>
+                <li><a href="welcome">Welcome</a></li>
+            </ul>
 
             <div class="content">
                 <div class="title m-b-md">
                     <a href="<?php echo route('main_apps.show', ['id' => 14]); ?>">
                     Podstawowe aplikacji
+                    @extends('layout')
                     </a>
                 </div>
                 <div class="links">
@@ -112,30 +119,31 @@
                     </tr>        
                        
                     @foreach($main_apps as $key => $data)
-                    <tr>
-                        <td>{{$data->id}}</td>
-                        <td>{{$data->session_id}}</td>
-                        <td>{{$data->intranet}}</td>
-                        <td>{{$data->comarch}}</td>
-                        <td>{{$data->bpcs}}</td>
-                        <td>{{$data->qms}}</td>
-                        <td>{{$data->sap}}</td>
-                        <td>{{$data->asseco}}</td>
-                        <td>{{$data->sanden_vision}}</td>
-                        <td>{{$data->facebook}}</td>
-                        <td>{{$data->smp_web_page}}</td>
-                        <td>{{$data->baza_sugestii}}</td>
-                        <td>{{$data->sanden_month_news}}</td>
-                        <td>{{$data->zmt}}</td>
-                        <td>{{$data->parcel_warehouse}}</td>
-                        <td>{{$data->lessons_learned}}</td>
-                        <td>{{$data->own_title}}</td>
-                        <td>{{$data->own}}</td>
-                        <td>{{$data->total}}</td>
-                    </tr>                  
-                    
-                @endforeach
+                        <tr>
+                            <td>{{$data->id}}</td>
+                            <td>{{$data->session_id}}</td>
+                            <td>{{$data->intranet}}</td>
+                            <td>{{$data->comarch}}</td>
+                            <td>{{$data->bpcs}}</td>
+                            <td>{{$data->qms}}</td>
+                            <td>{{$data->sap}}</td>
+                            <td>{{$data->asseco}}</td>
+                            <td>{{$data->sanden_vision}}</td>
+                            <td>{{$data->facebook}}</td>
+                            <td>{{$data->smp_web_page}}</td>
+                            <td>{{$data->baza_sugestii}}</td>
+                            <td>{{$data->sanden_month_news}}</td>
+                            <td>{{$data->zmt}}</td>
+                            <td>{{$data->parcel_warehouse}}</td>
+                            <td>{{$data->lessons_learned}}</td>
+                            <td>{{$data->own_title}}</td>
+                            <td>{{$data->own}}</td>
+                            <td>{{$data->total}}</td>
+                        </tr>                  
+                    @endforeach
+                
 
+                
                     <a href="<?php echo url('/'); ?>">
                 </table>
                 </div>

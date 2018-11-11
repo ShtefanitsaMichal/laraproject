@@ -10,9 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-    
+
+Route::get('/welcome', function(){return view('welcome');});
+Route::get('/layout', function(){return view('layout');});
+Route::get('/task', function(){return view('task');});
+
 Route::get('employee', function () {   $employee = DB::table('employee')->get(); return view('employee', ['employee' => $employee]); });
 Route::get('main_apps', function () {   $main_apps = DB::table('main_apps')->get(); return view('main_apps', ['main_apps' => $main_apps]); });
+
+
 
 Route::get('main_apps/{id}', function ($id) {
     $main_apps = DB::table('main_apps')->get(); return view('main_apps', ['main_apps' => $main_apps]);

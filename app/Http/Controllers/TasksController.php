@@ -11,7 +11,7 @@ class TasksController extends Controller
     return view('tasks.index')
     ->with('tasks', Task::all());
     }
-
+//Example 3-27. Common form input controller method
         public function store()
     {
     $task = new Task;
