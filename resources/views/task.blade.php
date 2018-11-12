@@ -3,6 +3,10 @@
 @section('content')
     <h1>My tasks</h1>
 
+    @foreach ($tasks as $task)
+        <li><a href="">{{ $task }}</a></li>
+    @endforeach
+
     <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
         Error accusamus totam, itaque libero omnis eveniet doloribus inventore placeat aliquam. 

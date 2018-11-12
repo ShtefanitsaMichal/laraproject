@@ -13,17 +13,11 @@
 
 Route::get('/welcome', function(){return view('welcome');});
 Route::get('/layout', function(){return view('layout');});
-Route::get('/task', function(){return view('task');});
+Route::get('/task', 'TaskController@task');
 
 Route::get('employee', function () {   $employee = DB::table('employee')->get(); return view('employee', ['employee' => $employee]); });
 Route::get('main_apps', function () {   $main_apps = DB::table('main_apps')->get(); return view('main_apps', ['main_apps' => $main_apps]); });
-
-
-
-Route::get('main_apps/{id}', function ($id) {
-    $main_apps = DB::table('main_apps')->get(); return view('main_apps', ['main_apps' => $main_apps]);
-//Example 3-6. Optional Route Parameter
-})->where('id', '[0-9]');
+Route::get('main_apps/{id}', 'MainAppsController@main_apps');
 
 Route::get('main_apps/{session_id}', function ($session_id) {
 $main_apps = DB::table('main_apps')->get(); return view('main_apps', ['main_apps' => $main_apps]);
@@ -41,11 +35,11 @@ Route::get('/main_apps/{id}/edit', ['as' => 'main_apps.edit',function ($id){ }])
 
 //Example 3-11. Defining a route group
 Route::group([], function(){
-    Route::get('hello', function(){
+    Route::get('ello', function(){
         return 'Hello';
     });
     Route::get('world', function(){
-        return 'world';
+        return 'World';
     });
 });
 //Example 3-24. Route for the simplest controller
